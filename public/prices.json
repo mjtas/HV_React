@@ -1,0 +1,34 @@
+[
+    {
+        "_id": {
+          "$oid": "655c246cd08e4ff080bf6e40"
+        },
+        "type": "standard",
+        "doublePrice": "$135",
+        "singlePrice": "$89"
+      },
+      {
+        "_id": {
+          "$oid": "655c26add08e4ff080bf6e41"
+        },
+        "type": "premium",
+        "singlePrice": "$129",
+        "doublePrice": "$199"
+      },
+      {
+        "_id": {
+          "$oid": "65ee8994138b86284043681f"
+        },
+        "type": "short",
+        "doublePrice": "$89",
+        "singlePrice": "$49"
+      },
+      {
+        "_id": {
+          "$oid": "671f62672127b039644bb4d2"
+        },
+        "type": "day",
+        "doublePrice": "$225",
+        "singlePrice": "$149"
+      }
+]
