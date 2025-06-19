@@ -43,7 +43,7 @@ const WorkshopTimetable: React.FC<WorkshopTimetableProps> = ({
   const formatDate = (date: string): string => {
     const options: Intl.DateTimeFormatOptions = { 
       year: 'numeric', 
-      month: 'long', 
+      month: 'short', 
       day: 'numeric' 
     };
     return new Date(date).toLocaleDateString('en-GB', options);
