@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-// Import your images - adjust paths as needed
 import toursImg from '/tours.png';
 import groupBuilding from '/groupBuilding.png';
 import customWorkshop from '/customWorkshop.png'
@@ -11,10 +10,12 @@ const HiddenValley: React.FC = () => {
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-green-600 mb-4">
+        <title>Private Bookings - Hidden Valley Workshops</title>
+        <meta name="description" content="Private booking information for Hidden Valley Workshops"></meta>
+        <h1 className="text-4xl md:text-5xl font-light font-serif text-green-600 mb-4">
             Hidden Valley
           </h1>
-          <h2 className="text-2xl md:text-3xl font-semibold text-gray-700">
+          <h2 className="text-2xl md:text-3xl font-light font-serif text-gray-700">
             Private Bookings
           </h2>
         </div>

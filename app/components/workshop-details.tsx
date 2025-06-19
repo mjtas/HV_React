@@ -295,12 +295,11 @@ const WorkshopDetails: React.FC = () => {
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-green-600 mb-4">
+        <title>Workshops - Hidden Valley Workshops</title>
+        <meta name="description" content="Workshop details for Hidden Valley Workshops"></meta>
+          <h1 className="text-4xl md:text-5xl font-light font-serif text-green-600 mb-4">
             Upcoming Workshops
           </h1>
-          <p className="text-xl text-gray-600">
-            Join us for hands-on learning at Hidden Valley
-          </p>
         </div>
 
         {/* Upcoming Workshops Section */}
@@ -334,7 +333,7 @@ const WorkshopDetails: React.FC = () => {
         {otherWorkshops.length > 0 && (
           <div className="mt-16">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-4">
+              <h2 className="text-3xl md:text-4xl font-light font-serif text-green-600 mb-4">
                 Other Workshops
               </h2>
               <p className="text-lg text-gray-600">

@@ -63,8 +63,10 @@ const Guides: React.FC = () => {
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-green-600 mb-4">Hidden Valley</h1>
-          <h2 className="text-2xl md:text-3xl font-semibold text-gray-700">How To Guides</h2>
+        <title>How to Guides - Hidden Valley Workshops</title>
+        <meta name="description" content="How To Guides by Hidden Valley Workshops"></meta>
+          <h1 className="text-4xl md:text-5xl font-light font-serif text-green-600 mb-4">Hidden Valley</h1>
+          <h2 className="text-2xl md:text-3xl font-light font-serif text-gray-700">How To Guides</h2>
         </div>
         
         {/* Mobile-first layout: stacked on mobile, sidebar on desktop */}

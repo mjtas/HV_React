@@ -1,19 +1,34 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from "react-router";
 
-// Import your images - adjust paths as needed
 import gardenDesignImg from '/winterPruning.png';
 import skillsConsultImg from '/skillsConsult.png';
+
+type PageTitleProps = {
+    title: string;
+  };
+  
+  function PageTitle({ title }: PageTitleProps) {
+    const location = useLocation();
+  
+    useEffect(() => {
+      document.title = title;
+    }, [title, location]);
+  
+    return null;
+  }
 
 const HiddenValley: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-green-600 mb-4">
+        <title>Consulting - Hidden Valley Workshops</title>
+        <meta name="description" content="Consulting information for Hidden Valley Workshops"></meta>
+        <h1 className="text-4xl md:text-5xl font-light font-serif text-green-600 mb-4">
             Hidden Valley
           </h1>
-          <h2 className="text-2xl md:text-3xl font-semibold text-gray-700">
+          <h2 className="text-2xl md:text-3xl font-light font-serif text-gray-700">
             Garden Design and Practical Skills Consulting
           </h2>
         </div>

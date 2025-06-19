@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -58,8 +58,10 @@ const ContactForm: React.FC = () => {
     <div className="min-h-screen bg-gray-50 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-10">
-        <h1 className="text-4xl md:text-5xl font-bold text-green-600 mb-4">Hidden Valley</h1>
-        <h2 className="text-2xl md:text-3xl font-semibold text-gray-700">Contact Us</h2>
+      <title>Contact Us - Hidden Valley Workshops</title>
+        <meta name="description" content="Contact information for Hidden Valley Workshops"></meta>
+        <h1 className="text-4xl md:text-5xl font-light font-serif text-green-600 mb-4">Hidden Valley</h1>
+        <h2 className="text-2xl md:text-3xl font-light font-serif text-gray-700">Contact Us</h2>
       </div>
 
       <div className="flex flex-col md:flex-row gap-8">
