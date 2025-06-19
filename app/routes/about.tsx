@@ -39,6 +39,7 @@ const About: React.FC = () => {
                   className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105" 
                   src={aboutImage} 
                   alt="Bonnie Bickel at Hidden Valley"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -62,6 +63,7 @@ const About: React.FC = () => {
                   className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105" 
                   src={hiddenValleyImage} 
                   alt="Hidden Valley landscape"
+                  loading="lazy"
                 />
               </div>
             </div>

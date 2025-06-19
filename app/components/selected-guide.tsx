@@ -24,6 +24,7 @@ const SelectedGuideComponent: React.FC<SelectedGuideComponentProps> = ({ guide }
           className="w-full max-w-md mx-auto rounded-lg shadow-md transition-transform duration-300 hover:scale-105" 
           src={`/${guide.image}.png`} 
           alt={guide.title}
+          loading="lazy"
         />
       </div>
       

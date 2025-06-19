@@ -38,7 +38,8 @@ const HiddenValley: React.FC = () => {
                 <img 
                   className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
                   src={toursImg} 
-                  alt="Hidden Valley Garden Design" 
+                  alt="Hidden Valley Garden Design"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -61,7 +62,8 @@ const HiddenValley: React.FC = () => {
                 <img 
                   className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
                   src={groupBuilding} 
-                  alt="Hidden Valley Team Building" 
+                  alt="Hidden Valley Team Building"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -90,7 +92,8 @@ const HiddenValley: React.FC = () => {
                 <img 
                   className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
                   src={customWorkshop} 
-                  alt="Hidden Valley Custom Workshop" 
+                  alt="Hidden Valley Custom Workshop"
+                  loading="lazy"
                 />
               </div>
             </div>
