@@ -69,7 +69,6 @@ const HiddenValley: React.FC = () => {
                   className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
                   src={gardenDesignImg} 
                   alt="Hidden Valley Garden Design"
-                  loading="lazy"
                 />
               </div>
             </div>

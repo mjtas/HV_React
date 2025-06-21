@@ -47,7 +47,6 @@ const BlogPost: React.FC<{ post: BlogPost; onToggle: (title: string) => void }> 
               className="w-full h-auto rounded-lg shadow-md object-cover"
               src={`/${post.image}.png`}
               alt={post.title}
-              loading="lazy"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.src = '/about.png'; // Fallback image

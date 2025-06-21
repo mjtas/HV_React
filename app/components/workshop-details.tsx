@@ -201,7 +201,6 @@ const WorkshopDetails: React.FC = () => {
             <img
               src={`/${workshop.image}.png`}
               alt={`${workshop.name} workshop`}
-              loading="lazy"
               className="w-full h-auto rounded-lg shadow-md object-cover transition-transform duration-300 hover:scale-105"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;

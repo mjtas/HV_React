@@ -96,7 +96,6 @@ const HiddenValleyWorkshops: React.FC = () => {
                   className="w-full max-h-120 object-bottom md:object-cover transition-transform duration-300 hover:scale-105" 
                   src={summerGardenImage} 
                   alt="Summer Garden at Hidden Valley"
-                  loading="lazy"
                 />
               </div>
             </div>
