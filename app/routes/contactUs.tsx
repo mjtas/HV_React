@@ -46,6 +46,8 @@ const ContactForm: React.FC = () => {
   if (isSubmitted) {
     return (
       <div className="max-w-4xl mx-auto p-6 bg-green-50 rounded-lg border border-green-200">
+        <title>Contact Us - Hidden Valley Workshops</title>
+        <meta name="description" content="Contact information for Hidden Valley Workshops"></meta>
         <h1 className="text-3xl font-bold text-center mb-4">Hidden Valley</h1>
         <h2 className="text-2xl font-semibold text-center mb-8">Contact Us</h2>
         
@@ -80,6 +82,11 @@ const ContactForm: React.FC = () => {
             
             <div onSubmit={handleSubmit} className="space-y-4">
               <div>
+                <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+                    <input type="text" name="name" />
+                    <input type="email" name="email" />
+                    <textarea name="message"></textarea>
+                </form>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                   Name
                 </label>
