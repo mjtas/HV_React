@@ -86,11 +86,6 @@ const HiddenValleyWorkshops: React.FC = () => {
         <div className="text-center mb-12 py-8">
         <title>Home - Hidden Valley Workshops</title>
         <meta name="description" content="Home page for Hidden Valley Workshops"></meta>
-        <meta property="og:title" content="Hidden Valley Workshops" />
-        <meta property="og:image" content="https://www.hiddenvalleyworkshops.com.au/summerGarden-small.png" />
-        <meta property="og:url" content="https://www.hiddenvalleyworkshops.com.au/" />
-        <meta property="og:description" content="Hidden Valley Workshops" />
-        <meta property="og:type" content="website" />
           <h1 className="text-4xl md:text-5xl font-serif font-thin text-green-600 mb-4">Hidden Valley</h1>
           <h2 className="text-2xl font-light font-serif text-gray-700 mb-8">Sustainable Living Workshops</h2>
           

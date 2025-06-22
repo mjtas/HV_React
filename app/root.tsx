@@ -29,6 +29,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="Hidden Valley Workshops" />
+        <meta property="og:image" content="https://www.hiddenvalleyworkshops.com.au/summerGarden-small.png" />
+        <meta property="og:url" content="https://www.hiddenvalleyworkshops.com.au/" />
+        <meta property="og:description" content="Hidden Valley Workshops" />
+        <meta property="og:type" content="website" />
         <Meta />
         <Links />
       </head>
