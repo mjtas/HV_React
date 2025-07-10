@@ -70,12 +70,6 @@ const ContactForm: React.FC = () => {
           <div className="md:w-1/2 bg-white p-6 rounded-lg shadow-md">
             <h3 className="text-xl font-semibold mb-4">Questions about our workshops?</h3>
             
-            <form name="contact" netlify netlify-honeypot="botField" hidden>
-                <input type="text" name="name" />
-                <input type="email" name="email" />
-                <textarea name="message"></textarea>
-            </form>
-            
             <form 
               name="contact"
               method="POST"
