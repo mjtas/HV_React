@@ -4,14 +4,6 @@ const SubscriptionForm: React.FC = () => {
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
 
-  // Netlify requirement
-  const HiddenForm = () => (
-    <form name="newsletter" netlify netlify-honeypot="bot-field" hidden>
-      <input type="hidden" name="form-name" value="newsletter" />
-      <input type="email" name="email" />
-    </form>
-  );
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -56,9 +48,7 @@ const SubscriptionForm: React.FC = () => {
   }
 
   return (
-    <div className="bg-green-50 border border-green-200 rounded-lg p-6 w-full max-w-md">
-      <HiddenForm /> {/* Render hidden form */}
-      
+    <div className="bg-green-50 border border-green-200 rounded-lg p-6 w-full max-w-md">      
       <h4 className="text-lg font-semibold text-gray-900 mb-4 text-center">
         Subscribe to Our Newsletter
       </h4>
@@ -71,7 +61,7 @@ const SubscriptionForm: React.FC = () => {
         className="space-y-4"
       >
         <input type="hidden" name="form-name" value="newsletter" />
-        
+
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
             Email Address
