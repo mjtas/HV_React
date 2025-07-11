@@ -11,11 +11,16 @@ const SubscriptionForm: React.FC = () => {
 
     try {
       // Prepare form data for Netlify
-      const formData = new URLSearchParams();
-      formData.append('form-name', 'newsletter');
-      formData.append('email', email);
+      const form = e.currentTarget as HTMLFormElement;
+      const formData = new FormData(form);
+      
+      // Convert to URLSearchParams
+      const params = new URLSearchParams();
+      formData.forEach((value, key) => {
+        params.append(key, value.toString());
+      });
 
-      // Submit to Netlify
+      // Submit to root path
       await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -25,7 +30,6 @@ const SubscriptionForm: React.FC = () => {
       // Update UI
       setIsSubscribed(true);
       setEmail('');
-      console.log('Submitted to Netlify:', email);
     } catch (error) {
       console.error('Submission error:', error);
       alert('Submission failed. Please try again.');
@@ -57,10 +61,22 @@ const SubscriptionForm: React.FC = () => {
         name="newsletter"
         method="POST"
         data-netlify="true"
+        data-netlify-honeypot="bot-field"
         onSubmit={handleSubmit}
         className="space-y-4"
       >
         <input type="hidden" name="form-name" value="newsletter" />
+
+        <div style={{ display: 'none' }}>
+          <label htmlFor="bot-field">Don't fill this out if you're human</label>
+          <input 
+            id="bot-field" 
+            name="bot-field" 
+            type="text" 
+            tabIndex={-1} 
+            autoComplete="off"
+          />
+        </div>
 
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
