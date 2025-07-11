@@ -8,26 +8,18 @@ const SubscriptionForm: React.FC = () => {
     e.preventDefault();
     
     if (!email) return;
-
+  
     try {
-      // Prepare form data for Netlify
-      const form = e.currentTarget as HTMLFormElement;
-      const formData = new FormData(form);
+      const formData = new URLSearchParams();
+      formData.append('form-name', 'newsletter');
+      formData.append('email', email);
       
-      // Convert to URLSearchParams
-      const params = new URLSearchParams();
-      formData.forEach((value, key) => {
-        params.append(key, value.toString());
-      });
-
-      // Submit to root path
       await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: formData.toString(),
       });
-
-      // Update UI
+  
       setIsSubscribed(true);
       setEmail('');
     } catch (error) {
@@ -61,7 +53,7 @@ const SubscriptionForm: React.FC = () => {
         name="newsletter"
         method="POST"
         data-netlify="true"
-        data-netlify-honeypot="bot-field"
+        netlify-honeypot="bot-field"
         onSubmit={handleSubmit}
         className="space-y-4"
       >
