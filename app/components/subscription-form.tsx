@@ -1,28 +1,40 @@
 import React, { useState } from 'react';
 
 const SubscriptionForm: React.FC = () => {
-  const [email, setEmail] = useState('');
+  const [formData, setFormData] = useState({
+      name: '',
+      email: '',
+      botField: '' // Honeypot field
+    });
   const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const { name, value } = e.target;
+      setFormData(prev => ({ ...prev, [name]: value }));
+    };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!email) return;
+    if (!formData.email) return;
   
     try {
-      const formData = new URLSearchParams();
-      formData.append('form-name', 'newsletter');
-      formData.append('email', email);
-      formData.append('bot-field', ''); // Add empty honeypot value
+      const formPayload = new URLSearchParams();
+      formPayload.append('form-name', 'newsletter');
+      formPayload.append('bot-field', ''); // Add empty honeypot value
       
+      // Append all form fields
+      Object.entries(formData).forEach(([key, value]) => {
+        formPayload.append(key, value);
+      });
+
       await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: formData.toString(),
+        body: formPayload.toString(),
       });
   
       setIsSubscribed(true);
-      setEmail('');
     } catch (error) {
       console.error('Submission error:', error);
       alert('Submission failed. Please try again.');
@@ -60,32 +72,43 @@ const SubscriptionForm: React.FC = () => {
       >
         <input type="hidden" name="form-name" value="newsletter" />
 
-        <div style={{ display: 'none' }}>
-          <label htmlFor="bot-field">Don't fill this out if you're human</label>
-          <input 
-            id="bot-field" 
-            name="bot-field" 
-            type="text" 
-            tabIndex={-1} 
-            autoComplete="off"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-            Email Address
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
-            placeholder="Enter your email"
-            required
-          />
-        </div>
+        {/* Honeypot field */}
+        <div className="hidden">
+                <label>
+                  Don't fill this out: <input name="bot-field" onChange={handleChange} />
+                </label>
+              </div>
+              
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                  required
+                />
+              </div>
+              
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="you@example.com"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                  required
+                />
+              </div>
         
         <button
           type="submit"
