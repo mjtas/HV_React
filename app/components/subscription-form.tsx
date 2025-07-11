@@ -13,6 +13,7 @@ const SubscriptionForm: React.FC = () => {
       const formData = new URLSearchParams();
       formData.append('form-name', 'newsletter');
       formData.append('email', email);
+      formData.append('bot-field', ''); // Add empty honeypot value
       
       await fetch('/', {
         method: 'POST',
