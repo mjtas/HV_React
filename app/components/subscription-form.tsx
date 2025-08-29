@@ -15,9 +15,7 @@ const SubscriptionForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!formData.email) return;
-  
+      
     try {
       const formPayload = new URLSearchParams();
       formPayload.append('form-name', 'newsletter');

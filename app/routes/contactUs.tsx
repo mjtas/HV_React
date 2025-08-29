@@ -23,7 +23,7 @@ const ContactForm: React.FC = () => {
       formPayload.append('form-name', 'contact');
       formPayload.append('bot-field', ''); // Add empty honeypot value
       
-      // Append all form fields including honeypot
+      // Append all form fields
       Object.entries(formData).forEach(([key, value]) => {
         formPayload.append(key, value);
       });
