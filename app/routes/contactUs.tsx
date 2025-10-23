@@ -59,9 +59,18 @@ const ContactForm: React.FC = () => {
 
   if (isSubmitted) {
     return (
-      <div className="max-w-4xl mx-auto p-6 bg-green-50 rounded-lg border border-green-200">
-        <h1 className="text-3xl font-bold text-center mb-4">Hidden Valley</h1>
-        <h2 className="text-2xl font-semibold text-center mb-8">Contact Us</h2>
+      <div className="min-h-screen bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4 py-8">
+        <div className="text-center mb-12">
+        <title>Contact Us - Hidden Valley Workshops</title>
+        <meta name="description" content="Contact information for Hidden Valley Workshops"></meta>
+        <h1 className="text-4xl md:text-5xl font-light font-serif text-green-600 mb-4">
+            Hidden Valley
+          </h1>
+          <h2 className="text-2xl md:text-3xl font-light font-serif text-gray-700">
+            Contact Us
+          </h2>
+        </div>
         
         <div className="bg-white p-8 rounded-lg shadow-md">
           <h3 className="text-xl font-semibold text-green-700 mb-4">Thank You!</h3>
@@ -69,6 +78,7 @@ const ContactForm: React.FC = () => {
             Your message has been sent successfully. We'll get back to you soon.
           </p>
         </div>
+      </div>
       </div>
     );
   }
