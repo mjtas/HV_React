@@ -1,4 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useLocation } from "react-router";
+
+type PageTitleProps = {
+  title: string;
+};
+
+function PageTitle({ title }: PageTitleProps) {
+  const location = useLocation();
+
+  useEffect(() => {
+    document.title = title;
+  }, [title, location]);
+
+  return null;
+}
+
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -58,11 +74,17 @@ const ContactForm: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <h1 className="text-4xl md:text-5xl font-light font-serif text-green-600 mb-4">Hidden Valley</h1>
-          <h2 className="text-2xl md:text-3xl font-light font-serif text-gray-700">Contact Us</h2>
+    <div className="min-h-screen bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4 py-8">
+        <div className="text-center mb-12">
+        <title>Contact Us - Hidden Valley Workshops</title>
+        <meta name="description" content="Contact information for Hidden Valley Workshops"></meta>
+        <h1 className="text-4xl md:text-5xl font-light font-serif text-green-600 mb-4">
+            Hidden Valley
+          </h1>
+          <h2 className="text-2xl md:text-3xl font-light font-serif text-gray-700">
+            Contact Us
+          </h2>
         </div>
 
         <div className="flex flex-col md:flex-row gap-8">
